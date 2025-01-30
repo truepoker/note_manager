@@ -28,7 +28,7 @@ def create_note() :
     while flag_id:
             # проверка корректности ввода даты дедлайна заметки
         try:
-            issue_date = datetime.strptime(input('Введите дедлайн (день-месяц-год): '), '%d-%m-%Y')
+            issue_date = datetime.strptime(input('Введите дедлайн (день-месяц-год): '), '%d-%m-%Y').strftime('%d-%m-%Y')
         except:
             print('Неверный формат ввода даты')
         else:
@@ -44,4 +44,4 @@ for n in range(len(note)):
     print('Описание заметки: ', note[n][3])
     print('Статус заметки: ', note[n][4])
     print('Дата создания заметки: ', note[n][5])
-    print('Дата истечения заметки (дедлайн): ', note[n][6].strftime('%d-%m-%Y'))
+    print('Дата истечения заметки (дедлайн): ', note[n][6])
